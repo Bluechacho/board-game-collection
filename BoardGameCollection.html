@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<!-- Call to BoardGameCollection.css -->
+	<link rel="stylesheet" type="text/css" href="BoardGameCollection.css">
+</head>
+
+<body>
+
+<!-- Title -->
+<h1>Kelvin's Board Game Collection</h1>
+
+<!-- Left column, holds the game icon table -->
+<div class="column">
+	<!-- Table of game icons -->
+	<table>
+		<tr>
+			<td id="tableData0" onclick="displayGameInfo('tableData0')">Catan</td>
+			<td id="tableData1" onclick="displayGameInfo('tableData1')">Kemet</td>
+			<td id="tableData2" onclick="displayGameInfo('tableData2')">Clank!</td>
+			<td id="tableData3" onclick="displayGameInfo('tableData3')">Ticket To Ride</td>
+		</tr>
+		<tr>
+			<td id="tableData4" onclick="displayGameInfo('tableData4')">Test4</td>
+			<td id="tableData5" onclick="displayGameInfo('tableData5')">Test5</td>
+			<td id="tableData6" onclick="displayGameInfo('tableData6')">Test6</td>
+			<td id="tableData7" onclick="displayGameInfo('tableData7')">Test1</td>
+		</tr>
+		<tr>
+			<td id="tableData8" onclick="displayGameInfo('tableData8')">Test4</td>
+			<td id="tableData9" onclick="displayGameInfo('tableData9')">Test5</td>
+			<td id="tableData10" onclick="displayGameInfo('tableData10')">Test6</td>
+			<td id="tableData11" onclick="displayGameInfo('tableData11')">Test1</td>
+		</tr>
+	</table>
+</div>
+
+<!-- Right column, holds the gameTitle and gameDisplay elements -->
+<div class="column">
+	<!-- Title of selcted game -->
+	<p id="gameTitle">Select a game!</p>
+	<!-- Image of selected game-->
+	<img id="gameDisplay"></img>
+	<!-- TO-DO: CREATE gameInfo TO DISPLAY INFORMATION ABOUT SELECTED GAME-->
+</div>
+
+<button onclick="sortByName()">Sort by Name</button>
+<script src="BoardGameCollection.js"></script>
+</body>
+</html>	

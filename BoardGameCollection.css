@@ -1,0 +1,41 @@
+﻿body {
+    background-color: #b30000;
+    color: #e6e600;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-shadow: 3px 2px #000000;
+}
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+#gameDisplay {
+    background-color: rgba(255, 0, 0, 0.212);
+    border: 5px solid #990000;
+    height: 300px;
+    text-align: center;
+    width: 300px;
+}
+
+#gameTitle {
+    font-size: 160%;
+    padding-left: 80px;
+}
+
+h1 {
+    font-style: italic; 
+    padding-bottom: 4%;
+    padding-left: 10%;
+    padding-top: 2%;
+
+}
+
+table {
+    padding-left: 15%;
+    padding-top: 8%;
+}
+
+td {
+    padding: 18px;
+}
