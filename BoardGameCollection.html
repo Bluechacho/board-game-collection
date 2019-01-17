@@ -9,31 +9,43 @@
 <body>
 
 <!-- Title -->
-<h1>Kelvin's Board Game Collection</h1>
+<div class="header">
+	<h1>Kelvin's Board Game Collection</h1>
+</div>
 
-<!-- Left column, holds the game icon table -->
+<!-- Navigation Bar -->
+<div class="navigationBar">
+	<a>About</a>
+	<a>Database</a>
+	<a>Who is Kelvin?</a>
+</div>
+
+<!-- Left column, holds the page description and game icon table -->
 <div class="column">
+	<h2>Game Database</h2>
+	<p id="databaseDescription">Click an icon below to view information about the game:</p>
+
 	<!-- Table of game icons -->
-	<table>
-		<tr>
-			<td id="tableData0" onclick="displayGameInfo('tableData0')">Catan</td>
-			<td id="tableData1" onclick="displayGameInfo('tableData1')">Kemet</td>
-			<td id="tableData2" onclick="displayGameInfo('tableData2')">Clank!</td>
-			<td id="tableData3" onclick="displayGameInfo('tableData3')">Ticket To Ride</td>
-		</tr>
-		<tr>
-			<td id="tableData4" onclick="displayGameInfo('tableData4')">Test4</td>
-			<td id="tableData5" onclick="displayGameInfo('tableData5')">Test5</td>
-			<td id="tableData6" onclick="displayGameInfo('tableData6')">Test6</td>
-			<td id="tableData7" onclick="displayGameInfo('tableData7')">Test1</td>
-		</tr>
-		<tr>
-			<td id="tableData8" onclick="displayGameInfo('tableData8')">Test4</td>
-			<td id="tableData9" onclick="displayGameInfo('tableData9')">Test5</td>
-			<td id="tableData10" onclick="displayGameInfo('tableData10')">Test6</td>
-			<td id="tableData11" onclick="displayGameInfo('tableData11')">Test1</td>
-		</tr>
-	</table>
+		<table>
+			<tr>
+				<td id="tableData0" onclick="displayGameInfo('tableData0')"></td>
+				<td id="tableData1" onclick="displayGameInfo('tableData1')"></td>
+				<td id="tableData2" onclick="displayGameInfo('tableData2')"></td>
+				<td id="tableData3" onclick="displayGameInfo('tableData3')"></td>
+			</tr>
+			<tr>
+				<td id="tableData4" onclick="displayGameInfo('tableData4')"></td>
+				<td id="tableData5" onclick="displayGameInfo('tableData5')"></td>
+				<td id="tableData6" onclick="displayGameInfo('tableData6')"></td>
+				<td id="tableData7" onclick="displayGameInfo('tableData7')"></td>
+			</tr>
+			<tr>
+				<td id="tableData8" onclick="displayGameInfo('tableData8')"></td>
+				<td id="tableData9" onclick="displayGameInfo('tableData9')"></td>
+				<td id="tableData10" onclick="displayGameInfo('tableData10')"></td>
+				<td id="tableData11" onclick="displayGameInfo('tableData11')"></td>
+			</tr>
+		</table>
 </div>
 
 <!-- Right column, holds the gameTitle and gameDisplay elements -->

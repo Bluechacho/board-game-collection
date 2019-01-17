@@ -1,8 +1,8 @@
 ﻿body {
-    background-color: #b30000;
-    color: #e6e600;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    text-shadow: 3px 2px #000000;
+    background-color: #efefef;
+    color: #a9a9a9;
+    font-family: Tahoma, sans-serif;
+    margin: 0;
 }
 
 .column {
@@ -10,32 +10,66 @@
     width: 50%;
 }
 
+#databaseDescription {
+    font-size: 18px;
+    padding-left: 100px;
+}
+
 #gameDisplay {
     background-color: rgba(255, 0, 0, 0.212);
     border: 5px solid #990000;
     height: 300px;
+    margin-left: 50px;
     text-align: center;
     width: 300px;
 }
 
 #gameTitle {
-    font-size: 160%;
-    padding-left: 80px;
+    font-size: 180%;
+    margin-left: 55px;
+    padding-top: 40px;
+    text-align: center;
+    width: 300px;
 }
 
-h1 {
-    font-style: italic; 
-    padding-bottom: 4%;
-    padding-left: 10%;
-    padding-top: 2%;
+.header { 
+    padding: 30px;
+    text-align: center;
+}
 
+h2 {
+    clear: left;
+    font-size: 40px;
+    padding-top: 40px;
+    padding-left: 100px;
 }
 
 table {
-    padding-left: 15%;
-    padding-top: 8%;
+    background-clip: content-box;
+    margin-left: 100px;
+    margin-top: 8%;
 }
 
 td {
     padding: 18px;
+}
+
+
+.navigationBar {
+    overflow: hidden;
+}
+
+.navigationBar a {
+    color: #a9a9a9;
+    float: left;
+    font-size: 30px;
+    height: 50px;
+    text-decoration: none;
+    text-align: center;
+    width: 33%;
+}
+
+
+.navigationBar a:hover {
+    background-color: rgb(196, 120, 206);
 }
