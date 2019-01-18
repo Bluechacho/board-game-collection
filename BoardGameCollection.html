@@ -15,9 +15,9 @@
 
 <!-- Navigation Bar -->
 <div class="navigationBar">
-	<a>About</a>
-	<a>Database</a>
-	<a>Who is Kelvin?</a>
+	<a id="infoTab" onclick="changeTab('infoTab')">Info</a>
+	<a id="databaseTab" onclick="changeTab(id)">Database</a>
+	<a id="aboutTab" onclick="changeTab(id)">About Me</a>
 </div>
 
 <!-- Left column, holds the page description and game icon table -->
@@ -48,13 +48,20 @@
 		</table>
 </div>
 
-<!-- Right column, holds the gameTitle and gameDisplay elements -->
-<div class="column">
+<!-- Left half of right column, holds the gameTitle and gameDisplay elements -->
+<div class="halfColumn">
 	<!-- Title of selcted game -->
 	<p id="gameTitle">Select a game!</p>
 	<!-- Image of selected game-->
 	<img id="gameDisplay"></img>
-	<!-- TO-DO: CREATE gameInfo TO DISPLAY INFORMATION ABOUT SELECTED GAME-->
+</div>
+
+<!-- Right half of right column, holds the game information elements -->
+<div class="halfColumn">
+	<!-- Title of selcted game -->
+	<p id="gameDescription">Play against four people in this farming showdown! Farm and stuff.</p>
+	<p id="gameGenre"><b>Genre:</b> Farmin'</p>
+	<p id="gamePlayers"><b>Number of Players: 3</b></p>
 </div>
 
 <button onclick="sortByName()">Sort by Name</button>

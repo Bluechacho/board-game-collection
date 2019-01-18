@@ -75,10 +75,16 @@ var gameArray = [gameCatan, gameClank, gameCoup, gameCoupRebellion, gameDungeons
 var sortArray = [gameCatan, gameClank, gameCoup, gameCoupRebellion, gameDungeonsAndDragons, gameKemet, gameMageKnight, gameTicketToRide, gameVast, gamePlaceholder, gamePlaceholder, gamePlaceholder];
 populateTable();
 
+//On click of tab, change background color/visible elements
+function changeTab(activeTab)
+{
+    document.body.className = "body".concat(activeTab);
+}
+
 //On click of icon, display game information in gameTitle, gameDisplay, gameInfo
 function displayGameInfo(gameID)
 {
-    var gameVar = sortArray[gameID.slice(-2).replace(/\D/,"")];
+    var gameVar = sortArray[gameID.slice(-3).replace(/\D/,"")];
     if (gameVar != gamePlaceholder){
         document.getElementById("gameTitle").innerHTML = document.getElementById(gameID).innerText;
        document.getElementById("gameDisplay").src = gameVar.imageURL;
