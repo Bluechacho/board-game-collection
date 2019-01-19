@@ -21,7 +21,6 @@ body {
     background-color: #062f4f;
 }
 
-
 .column {
     float: left;
     width: 50%;
@@ -36,10 +35,6 @@ body {
     background-color: #813772;
 }
 
-#gameDescription {
-    margin-top: 40px;
-}
-
 #gameDisplay {
     background-color: rgba(255, 0, 0, 0.212);
     border: 5px solid #990000;
@@ -48,17 +43,21 @@ body {
     width: 300px;
 }
 
+#gameInformation {
+    margin-top: 250px;
+}
+
 #gameTitle {
-    font-size: 30px;
+    font-size: 25px;
     margin-left: 5px;
-    padding-top: 40px;
+    padding-top: 150px;
     text-align: center;
     width: 300px;
 }
 
 .halfColumn {
     float: left;
-    width: 25%;
+    width: 23%;
 }
 
 .header { 
@@ -80,12 +79,16 @@ h2 {
 
 table {
     background-clip: content-box;
+    background-color: #ffffff;
+    border-radius: 25px;
     margin-left: 100px;
     margin-top: 8%;
+    margin-bottom: 150px;
+    overflow: scroll;
 }
 
 td {
-    padding: 18px;
+    padding: 5px;
 }
 
 
@@ -97,7 +100,9 @@ td {
     float: left;
     font-size: 30px;
     height: 50px;
+    line-height: 50px;
     text-decoration: none;
     text-align: center;
     width: 33.33%;
 }
+

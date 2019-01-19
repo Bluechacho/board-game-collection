@@ -15,56 +15,64 @@
 
 <!-- Navigation Bar -->
 <div class="navigationBar">
-	<a id="infoTab" onclick="changeTab('infoTab')">Info</a>
+	<a id="infoTab" onclick="changeTab(id)">Info</a>
 	<a id="databaseTab" onclick="changeTab(id)">Database</a>
 	<a id="aboutTab" onclick="changeTab(id)">About Me</a>
 </div>
 
-<!-- Left column, holds the page description and game icon table -->
-<div class="column">
-	<h2>Game Database</h2>
-	<p id="databaseDescription">Click an icon below to view information about the game:</p>
+<!-- Contains the Database page -->
+<div id="databasePage">
+	<!-- Left column, holds the page description and game icon table -->
+	<div class="column">
+		<h2>Game Database</h2>
+		<p id="databaseDescription">Click an icon below to view information about the game:</p>
 
-	<!-- Table of game icons -->
-		<table>
-			<tr>
-				<td id="tableData0" onclick="displayGameInfo('tableData0')"></td>
-				<td id="tableData1" onclick="displayGameInfo('tableData1')"></td>
-				<td id="tableData2" onclick="displayGameInfo('tableData2')"></td>
-				<td id="tableData3" onclick="displayGameInfo('tableData3')"></td>
-			</tr>
-			<tr>
-				<td id="tableData4" onclick="displayGameInfo('tableData4')"></td>
-				<td id="tableData5" onclick="displayGameInfo('tableData5')"></td>
-				<td id="tableData6" onclick="displayGameInfo('tableData6')"></td>
-				<td id="tableData7" onclick="displayGameInfo('tableData7')"></td>
-			</tr>
-			<tr>
-				<td id="tableData8" onclick="displayGameInfo('tableData8')"></td>
-				<td id="tableData9" onclick="displayGameInfo('tableData9')"></td>
-				<td id="tableData10" onclick="displayGameInfo('tableData10')"></td>
-				<td id="tableData11" onclick="displayGameInfo('tableData11')"></td>
-			</tr>
-		</table>
-</div>
+		<!-- Table of game icons -->
+			<table>
+				<tr>
+					<td id="tableData0" onclick="displayGameInfo('tableData0')"></td>
+					<td id="tableData1" onclick="displayGameInfo('tableData1')"></td>
+					<td id="tableData2" onclick="displayGameInfo('tableData2')"></td>
+					<td id="tableData3" onclick="displayGameInfo('tableData3')"></td>
+				</tr>
+				<tr>
+					<td id="tableData4" onclick="displayGameInfo('tableData4')"></td>
+					<td id="tableData5" onclick="displayGameInfo('tableData5')"></td>
+					<td id="tableData6" onclick="displayGameInfo('tableData6')"></td>
+					<td id="tableData7" onclick="displayGameInfo('tableData7')"></td>
+				</tr>
+				<tr>
+					<td id="tableData8" onclick="displayGameInfo('tableData8')"></td>
+					<td id="tableData9" onclick="displayGameInfo('tableData9')"></td>
+					<td id="tableData10" onclick="displayGameInfo('tableData10')"></td>
+					<td id="tableData11" onclick="displayGameInfo('tableData11')"></td>
+				</tr>
+			</table>
+	</div>
 
-<!-- Left half of right column, holds the gameTitle and gameDisplay elements -->
-<div class="halfColumn">
-	<!-- Title of selcted game -->
-	<p id="gameTitle">Select a game!</p>
-	<!-- Image of selected game-->
-	<img id="gameDisplay"></img>
-</div>
+	<!-- Left half of right column, holds the gameTitle and gameDisplay elements -->
+	<div class="halfColumn">
+		<!-- Title of selcted game -->
+		<p id="gameTitle">Select a game!</p>
+		<!-- Image of selected game-->
+		<img id="gameDisplay"></img>
+	</div>
 
-<!-- Right half of right column, holds the game information elements -->
-<div class="halfColumn">
-	<!-- Title of selcted game -->
-	<p id="gameDescription">Play against four people in this farming showdown! Farm and stuff.</p>
-	<p id="gameGenre"><b>Genre:</b> Farmin'</p>
-	<p id="gamePlayers"><b>Number of Players: 3</b></p>
-</div>
-
-<button onclick="sortByName()">Sort by Name</button>
-<script src="BoardGameCollection.js"></script>
+	<!-- Right half of right column, holds the game information elements -->
+	<div id="gameInformation" class="halfColumn">
+		<!-- Title of selcted game -->
+		<p id="gameDescription"></p>
+		<p id="gameTheme"></p>
+		<p id="gamePlayers"></p>
+	</div>
+	
+	<button onclick="sortByNameAtoZ()">Alphabetical (A to Z)</button>
+	<button onclick="sortByNameAtoZ()">Alphabetical (Z to A)</button>
+	<button onclick="sortByNameAtoZ()">Theme</button>
+	<button onclick="sortByNameAtoZ()">Owned</button>
+	<button onclick="sortByNameAtoZ()">Number of Players</button>
+	<button onclick="sortByNameAtoZ()">Solo Games</button>
+	<button onclick="sortByNameAtoZ()">Party Games</button>
+	<script src="BoardGameCollection.js"></script>
 </body>
 </html>	
