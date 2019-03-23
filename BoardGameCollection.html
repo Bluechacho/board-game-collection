@@ -4,75 +4,85 @@
 <head>
 	<!-- Call to BoardGameCollection.css -->
 	<link rel="stylesheet" type="text/css" href="BoardGameCollection.css">
+
+	<!-- Set the viewport-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 
 <body>
-
-<!-- Title -->
-<div class="header">
-	<h1>Kelvin's Board Game Collection</h1>
-</div>
-
 <!-- Navigation Bar -->
-<div class="navigationBar">
-	<a id="infoTab" onclick="changeTab(id)">Info</a>
-	<a id="databaseTab" onclick="changeTab(id)">Database</a>
-	<a id="aboutTab" onclick="changeTab(id)">About Me</a>
-</div>
+<nav>
+	<li><p>Board Game Collection</p></li>
+	<li><a id="myListTab" onclick=changeTab(id,1)> My List</a></li>
+	<li><a id="wishlistTab" onclick=changeTab(id,1)> Wishlist</a></li>
+	<li><a id="aboutTab" onclick=changeTab(id,0)> About</a></li>
+</nav>
 
-<!-- Contains the Database page -->
-<div id="databasePage">
-	<!-- Left column, holds the page description and game icon table -->
-	<div class="column">
-		<h2>Game Database</h2>
-		<p id="databaseDescription">Click an icon below to view information about the game:</p>
-
-		<!-- Table of game icons -->
-			<table>
-				<tr>
-					<td id="tableData0" onclick="displayGameInfo('tableData0')"></td>
-					<td id="tableData1" onclick="displayGameInfo('tableData1')"></td>
-					<td id="tableData2" onclick="displayGameInfo('tableData2')"></td>
-					<td id="tableData3" onclick="displayGameInfo('tableData3')"></td>
-				</tr>
-				<tr>
-					<td id="tableData4" onclick="displayGameInfo('tableData4')"></td>
-					<td id="tableData5" onclick="displayGameInfo('tableData5')"></td>
-					<td id="tableData6" onclick="displayGameInfo('tableData6')"></td>
-					<td id="tableData7" onclick="displayGameInfo('tableData7')"></td>
-				</tr>
-				<tr>
-					<td id="tableData8" onclick="displayGameInfo('tableData8')"></td>
-					<td id="tableData9" onclick="displayGameInfo('tableData9')"></td>
-					<td id="tableData10" onclick="displayGameInfo('tableData10')"></td>
-					<td id="tableData11" onclick="displayGameInfo('tableData11')"></td>
-				</tr>
-			</table>
+<!-- Left column, holds the page description and game icon table -->
+<div class="column">
+	<!-- Contains the My List section-->
+	<div id="myListPage">
+		<h2>My List</h2>
+		<p class="description">Click an icon below to view information about the game:</p>
 	</div>
 
-	<!-- Left half of right column, holds the gameTitle and gameDisplay elements -->
+	<!-- Contains the wishlist section-->
+	<div id="wishlistPage">
+		<h2>Wishlist</h2>
+		<p class="description">Click an icon below to view information about the game:</p>
+	</div>
+
+	<!-- Contains the About section-->
+	<div id="aboutPage">
+		<h2>Yeetus Fleetus</h2>
+		<p class="description">asdadsdgdfg:</p>
+		</div>
+	
+	<!-- Table of game icons -->	
+	<div id="gameTable">
+		<table>
+			<tr>
+				<td id="tableData0" onclick="displayGameInfo(id)"></td>
+				<td id="tableData1" onclick="displayGameInfo(id)"></td>
+				<td id="tableData2" onclick="displayGameInfo(id)"></td>
+				<td id="tableData3" onclick="displayGameInfo(id)"></td>
+			</tr>
+			<tr>
+				<td id="tableData4" onclick="displayGameInfo(id)"></td>
+				<td id="tableData5" onclick="displayGameInfo(id)"></td>
+				<td id="tableData6" onclick="displayGameInfo(id)"></td>
+				<td id="tableData7" onclick="displayGameInfo(id)"></td>
+			</tr>
+			<tr>
+				<td id="tableData8" onclick="displayGameInfo(id)"></td>
+				<td id="tableData9" onclick="displayGameInfo(id)"></td>
+				<td id="tableData10" onclick="displayGameInfo(id)"></td>
+				<td id="tableData11" onclick="displayGameInfo(id)"></td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+<!-- Left half of right column, holds the gameTitle and gameDisplay elements -->
+<div id="gameInformation">
 	<div class="halfColumn">
-		<!-- Title of selcted game -->
-		<p id="gameTitle">Select a game!</p>
-		<!-- Image of selected game-->
-		<img id="gameDisplay"></img>
+			<!-- Title of selcted game -->
+			<p id="gameTitle">Select a game!</p>
+			<!-- Image of selected game-->
+			<img id="gameDisplay"></img>
 	</div>
 
 	<!-- Right half of right column, holds the game information elements -->
-	<div id="gameInformation" class="halfColumn">
-		<!-- Title of selcted game -->
-		<p id="gameDescription"></p>
-		<p id="gameTheme"></p>
-		<p id="gamePlayers"></p>
+	<div  class="halfColumn">
+			<!-- Title of selcted game -->
+			<p id="gameDescription"></p>
+			<p id="gameTheme"></p>
+			<p id="gamePlayers"></p>
+		</div>
 	</div>
-	
-	<button onclick="sortByNameAtoZ()">Alphabetical (A to Z)</button>
-	<button onclick="sortByNameAtoZ()">Alphabetical (Z to A)</button>
-	<button onclick="sortByNameAtoZ()">Theme</button>
-	<button onclick="sortByNameAtoZ()">Owned</button>
-	<button onclick="sortByNameAtoZ()">Number of Players</button>
-	<button onclick="sortByNameAtoZ()">Solo Games</button>
-	<button onclick="sortByNameAtoZ()">Party Games</button>
+</div>
+
 	<script src="BoardGameCollection.js"></script>
 </body>
 </html>	

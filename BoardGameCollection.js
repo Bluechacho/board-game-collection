@@ -1,3 +1,4 @@
+
 /*Variable initialization for board game images*/
 var gameCatan = { 
     name: "Catan", 
@@ -89,7 +90,7 @@ var gameVast = {
     greyedOut: 0
 };
 
-//gamePlaceholder for empty spots in gameArray and sortArray
+//gamePlaceholder for empty spots in ownedArray and sortArray
 var gamePlaceholder = {
     name: "", 
     description: "n/a",
@@ -100,17 +101,33 @@ var gamePlaceholder = {
     greyedOut: 0
 };
 
-//Initialization of gameArray to hold all game vars and sortArray to display sorted order
-var gameArray = [gameCatan, gameClank, gameCoup, gameCoupRebellion, gameDungeonsAndDragons, gameKemet, gameMageKnight, gameTicketToRide, gameVast];
+//Initialization of ownedArray and wishArray to hold game vars, sortArray to display sorted order
+var ownedArray = [gameCatan, gameClank, gameCoup, gameCoupRebellion, gameDungeonsAndDragons, gameKemet, gameMageKnight, gameTicketToRide, gameVast];
+var wishArray = [gameTicketToRide, gameTicketToRide, gameTicketToRide, gamePlaceholder, gamePlaceholder, gamePlaceholder, gamePlaceholder, gamePlaceholder];
 var sortArray = [gamePlaceholder, gamePlaceholder, gamePlaceholder, gamePlaceholder, gamePlaceholder, gamePlaceholder, gamePlaceholder, gamePlaceholder, gamePlaceholder];
-sortByNameAtoZ();
+sortByNameAtoZ(ownedArray);
 
-//On click of tab, change background color/visible elements
-function changeTab(activeTab)
+//On click of tab, change background color/visible elements and check if listIsVisible
+function changeTab(activeTab, gameTableIsVisible)
 {
     document.body.className = "body".concat(activeTab);
-    document.getElementById("databasePage").style.visibility = "hidden";
-    document.getElementById(((activeTab.slice(0, activeTab.indexOf("Tab")))).concat("Page")).style.visibility = "visible";
+    document.getElementById("aboutPage").style.display = "none";
+    document.getElementById("myListPage").style.display = "none";
+    document.getElementById("wishlistPage").style.display = "none";
+    document.getElementById(((activeTab.slice(0, activeTab.indexOf("Tab")))).concat("Page")).style.display = "initial";
+
+    //If gameTableIsVisible is true, populate and show game table
+    if (gameTableIsVisible == 1)
+    {
+        document.getElementById("gameTable").style.display = "table";
+        document.getElementById("gameInformation").style.display = "initial";
+
+    }
+    else
+    {
+        document.getElementById("gameTable").style.display = "none";
+        document.getElementById("gameInformation").style.display = "none";
+    }
 }
 
 //On click of icon, display game information in gameTitle, gameDisplay, gameInfo
@@ -147,19 +164,10 @@ function populateTable()
 }
 
 //Sort game objects by name into array A to Z, then call populateTable()
-function sortByNameAtoZ()
+function sortByNameAtoZ(passedArray)
 {
     for (i=0; i < sortArray.length; i++) {
-        sortArray[i] = gameArray[i];
-    }
-    populateTable();
-}
-
-//Sort game objects by name into array Z to A
-function sortByNameAtoZ()
-{
-    for (i=0; i < sortArray.length; i++) {
-        sortArray[i] = gameArray[i];
+        sortArray[i] = passedArray[i];
     }
     populateTable();
 }
