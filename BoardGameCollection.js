@@ -105,23 +105,31 @@ var gamePlaceholder = {
 var ownedArray = [gameCatan, gameClank, gameCoup, gameCoupRebellion, gameDungeonsAndDragons, gameKemet, gameMageKnight, gameTicketToRide, gameVast];
 var wishArray = [gameTicketToRide, gameTicketToRide, gameTicketToRide, gamePlaceholder, gamePlaceholder, gamePlaceholder, gamePlaceholder, gamePlaceholder];
 var sortArray = [gamePlaceholder, gamePlaceholder, gamePlaceholder, gamePlaceholder, gamePlaceholder, gamePlaceholder, gamePlaceholder, gamePlaceholder, gamePlaceholder];
-sortByNameAtoZ(ownedArray);
+sortByNameAToZ(ownedArray);
 
-//On click of tab, change background color/visible elements and check if listIsVisible
+//On click of tab, change background color/visible elements and check if game table is visible
 function changeTab(activeTab, gameTableIsVisible)
-{
+{    
     document.body.className = "body".concat(activeTab);
     document.getElementById("aboutPage").style.display = "none";
     document.getElementById("myListPage").style.display = "none";
     document.getElementById("wishlistPage").style.display = "none";
+    currentTab = (((activeTab.slice(0, activeTab.indexOf("Tab")))).concat("Page"));
     document.getElementById(((activeTab.slice(0, activeTab.indexOf("Tab")))).concat("Page")).style.display = "initial";
 
     //If gameTableIsVisible is true, populate and show game table
     if (gameTableIsVisible == 1)
     {
+        //Call sortByNameAToZ for the appropriate table, then display game table
+        if (currentTab == "myListPage") {
+            sortByNameAToZ(ownedArray);
+        }
+        else if (currentTab == "wishlistPage") {
+            sortByNameAToZ(wishArray);
+        }
+
         document.getElementById("gameTable").style.display = "table";
         document.getElementById("gameInformation").style.display = "initial";
-
     }
     else
     {
@@ -135,7 +143,7 @@ function displayGameInfo(gameID)
 {
     var gameVar = sortArray[gameID.slice(-2).replace(/\D/,"")];
     //Update all gameElements for passed non-gamePlaceholder parameter
-    if (gameVar != gamePlaceholder){
+    if (gameVar != gamePlaceholder) {
         document.getElementById("gameTitle").innerHTML = gameVar.name;
         document.getElementById("gameDisplay").src = gameVar.imageFullURL;
         document.getElementById("gameDescription").innerHTML = gameVar.description;
@@ -164,7 +172,7 @@ function populateTable()
 }
 
 //Sort game objects by name into array A to Z, then call populateTable()
-function sortByNameAtoZ(passedArray)
+function sortByNameAToZ(passedArray)
 {
     for (i=0; i < sortArray.length; i++) {
         sortArray[i] = passedArray[i];
