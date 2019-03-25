@@ -101,11 +101,12 @@ var gamePlaceholder = {
     greyedOut: 0
 };
 
-//Initialization of ownedArray and wishArray to hold game vars, sortArray to display sorted order
+//Initialization of ownedArray and wishArray to hold game vars, sortArray to display sorted order, changeTab to default tab
 var ownedArray = [gameCatan, gameClank, gameCoup, gameCoupRebellion, gameDungeonsAndDragons, gameKemet, gameMageKnight, gameTicketToRide, gameVast];
-var wishArray = [gameTicketToRide, gameTicketToRide, gameTicketToRide, gamePlaceholder, gamePlaceholder, gamePlaceholder, gamePlaceholder, gamePlaceholder];
+var wishArray = [gameTicketToRide, gameTicketToRide, gameTicketToRide, gamePlaceholder, gamePlaceholder, gamePlaceholder, gamePlaceholder, gamePlaceholder, gamePlaceholder];
 var sortArray = [gamePlaceholder, gamePlaceholder, gamePlaceholder, gamePlaceholder, gamePlaceholder, gamePlaceholder, gamePlaceholder, gamePlaceholder, gamePlaceholder];
 sortByNameAToZ(ownedArray);
+changeTab("myListTab",1);
 
 //On click of tab, change background color/visible elements and check if game table is visible
 function changeTab(activeTab, gameTableIsVisible)
@@ -116,23 +117,25 @@ function changeTab(activeTab, gameTableIsVisible)
     document.getElementById("wishlistPage").style.display = "none";
     currentTab = (((activeTab.slice(0, activeTab.indexOf("Tab")))).concat("Page"));
     document.getElementById(((activeTab.slice(0, activeTab.indexOf("Tab")))).concat("Page")).style.display = "initial";
-
+    
     //If gameTableIsVisible is true, populate and show game table
-    if (gameTableIsVisible == 1)
-    {
+    if (gameTableIsVisible == 1) {
         //Call sortByNameAToZ for the appropriate table, then display game table
         if (currentTab == "myListPage") {
+            //Note: Redundant code in line 132 is needed to execute properly
             sortByNameAToZ(ownedArray);
         }
         else if (currentTab == "wishlistPage") {
+            //Note: Redundant code in line 126 is needed to execute properly
             sortByNameAToZ(wishArray);
         }
 
+        //Display game table
         document.getElementById("gameTable").style.display = "table";
         document.getElementById("gameInformation").style.display = "initial";
     }
-    else
-    {
+    else {
+        //Hide game table
         document.getElementById("gameTable").style.display = "none";
         document.getElementById("gameInformation").style.display = "none";
     }
@@ -141,6 +144,7 @@ function changeTab(activeTab, gameTableIsVisible)
 //On click of icon, display game information in gameTitle, gameDisplay, gameInfo
 function displayGameInfo(gameID)
 {
+    
     var gameVar = sortArray[gameID.slice(-2).replace(/\D/,"")];
     //Update all gameElements for passed non-gamePlaceholder parameter
     if (gameVar != gamePlaceholder) {
@@ -156,20 +160,37 @@ function displayGameInfo(gameID)
 //Read the sortArray, populate table in sorted order, update game icons
 function populateTable()
 {
+
     for (i=0; i < sortArray.length; i++) {
         //Only read non-gamePlaceholder game objects
         if (sortArray[i] != gamePlaceholder) {
-            document.getElementById("tableData".concat(i)).innerHTML = ("<img height='120px' width='120px' src='".concat(sortArray[i].imageIconURL)).concat("'>")};
-            
-            //Grey out image if display criteria isn't met
-            if (sortArray[i].greyedOut == 1) {
-                document.getElementById("tableData".concat(i)).style.webkitFilter = "grayscale(100%)";
+            document.getElementById("tableData".concat(i)).innerHTML = ("<img height='120px' width='120px' src='".concat(sortArray[i].imageIconURL)).concat("'>");
         }
-    };
+        
+        //Grey out image if display criteria isn't met
+        if (sortArray[i].greyedOut == 1) {
+            document.getElementById("tableData".concat(i)).style.webkitFilter = "grayscale(100%)";
+        }
+    }
+
+    document.getElementById("myListTab").innerHTML = sortArray[0].name;
+
 
     //Instantly display first game in table
     displayGameInfo("tableData0");
+    return 0;
 }
+
+//Transfer passedArray to sortArray, then return to specific sort
+/*
+function sort(passedArray)
+{
+    for (i=0; i < sortArray.length; i++) {
+        sortArray[i] = passedArray[i];
+    }
+    return passedArray;
+}
+*/
 
 //Sort game objects by name into array A to Z, then call populateTable()
 function sortByNameAToZ(passedArray)
@@ -178,4 +199,5 @@ function sortByNameAToZ(passedArray)
         sortArray[i] = passedArray[i];
     }
     populateTable();
+    return 0;
 }
